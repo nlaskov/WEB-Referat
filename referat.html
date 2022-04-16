@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="javascript/bootstrap.bundle.min.js"></script>
+    <meta charset=utf-8>
+    <title> Реферат: Bootstrap</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a href="#Intro" class="nav-link">Увод</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Оформление</a>
+                        <div class="dropdown-menu">
+                            <a href="#Breakpoints" class="dropdown-item">Брейпойнтс</a>
+                            <a href="#Containers" class="dropdown-item">Контейнери</a>
+                            <a href="#Grid" class="dropdown-item">Грид система</a>
+                            <a href="#Columns" class="dropdown-item">Колони</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Съдържание</a>
+                        <div class="dropdown-menu">
+                            <a href="#Typography" class="dropdown-item">Типография</a>
+                            <a href="#Colors" class="dropdown-item">Цветове</a>
+                            <a href="#Images" class="dropdown-item">Изображения</a>
+                            <a href="#Tables" class="dropdown-item">Таблици</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Формуляри</a>
+                        <div class="dropdown-menu">
+                            <a href="#Form" class="dropdown-item">Форми</a>
+                            <a href="#Select" class="dropdown-item">Select</a>
+                            <a href="#Check_and_radio" class="dropdown-item">Check и радио бутони</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Компоненти</a>
+                        <div class="dropdown-menu">
+                            <a href="#Alerts" class="dropdown-item">Alerts</a>
+                            <a href="#Badges" class="dropdown-item">Badges</a>
+                            <a href="#Button" class="dropdown-item">Buttons</a>
+                            <a href="#Cards" class="dropdown-item">Cards</a>
+                            <a href="#Carousel" class="dropdown-item">Carousel</a>
+                            <a href="#Dropdowns" class="dropdown-item">Dropdowns</a>
+                            <a href="#Modal" class="dropdown-item">Modal</a>
+                            <a href="#Offcanvas" class="dropdown-item">Offcanvas</a>
+                            <a href="#Spinners" class="dropdown-item">Spinners</a>
+                            <a href="#Others" class="dropdown-item">Others</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Sorces" class="nav-link">Източници</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h1 style="margin: 4% 0 4% "> Bootstrap </h1>
+    </section> <!-- Title -->
+
+    <section id="Intro" class="container">
+        <h2>Увод</h2>
+        <p class="text-justify">
+            Bootstrap е безплатен CSS фреймуърк (framework) със отворен код, чиято цел е създаването на уеб приложения ориентирани към мобилни устройства. Във себе си този фреймуърк съдържа както CSS шблони, така и такива за ХTML и JavaScript. Създатели на тогава наречената Twitter Blueprint са група от програмисти, които по това време са работели в Twitter и са искали да създадът библиотека която да доведе до консистентност при разработването на уеб приложения. Днес (Април 2022) е достъпна петата версия на Bootstrap която носи нови функции и премахва стари грешки, както и премахва зависимоста от JQuery в полза на обикновен JavaScript.
+        </p>
+
+        <h5>Как да започнем работа със Bootsrtrap</h5>
+        <p class="text-justify">
+            За да започнем работа със Bootsrtrap се изисква да добавим линкове към различните CSS и JavaScript библиотеки във HTML файл, или да се добави линк към цял бъндъл. Друга възможност е да изтеглят готови бъндали от CSS и JavaScript библиотеки които лесно да се добвят към съществуващ HTML файл и да позволят разработването във офлайн среда.
+        </p>
+
+        <pre class="example"><code>
+        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt; 
+        &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+            </code></pre> <a href="#ref-link-1">[1]</a>
+
+    </section> <!-- Intro -->
+    
+    <section id="one" class="container">
+        <h2>Оформление</h2>
+        <section id="Breakpoints">
+            <h5>Breakpoints</h5>
+            <p class="text-justify">
+                Breakpoints са дължини които могат да се адаптират. От тях зависи различното оформление в зависимост от големината на екрана. Bootstrap включва 6 основни брекпойнта, от X-Small (&lt;576px) до Extra extral large (&gt;= 1400px). След достигането на даден breakpoint, контейнера към който е зададен ще се разпъне до 100% от възможното пространство.
+            </p>
+
+            <p class="text-justify">
+                Таблицата показва шесте различни вида breakpoints:
+            </p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Class infix</th>
+                        <th>Dimensions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X-Small</td>
+                        <td><em>None</em></td>
+                        <td>&lt;576px</td>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td><code>sm</code></td>
+                        <td>≥576px</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td><code>md</code></td>
+                        <td>≥768px</td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td><code>lg</code></td>
+                        <td>≥992px</td>
+                    </tr>
+                    <tr>
+                        <td>Extra large</td>
+                        <td><code>xl</code></td>
+                        <td>≥1200px</td>
+                    </tr>
+                    <tr>
+                        <td>Extra extra large</td>
+                        <td><code>xxl</code></td>
+                        <td>≥1400px</td>
+                    </tr>
+                </tbody>
+            </table> <a href="#ref-link-2">[2]</a>
+        </section>
+
+        <section id="Containers">
+            <h5>Контейнери</h5>
+            <p class="text-justify">
+                Една от най-важните градивни единици на Bootstrap е контейнера. Това са ситема от CSS класове които се грижат за подреждането на нашето съдържание. Основната идея на контейнерите е че те могат да се разместват и променят с помоща на breakpoints. Фреймуърка Bootstrap идва със 3 основни вида контейнери:
+            </p>
+            <p class="text-justify">
+                <code>.container</code> е основния вид контейнер, който се променя на всеки breakpoint.
+            </p>
+            <pre class="example"><code>
+            &lt;div class="container"&gt; 
+                &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+                &lt;p&gt;This is some text.&lt;/p&gt;
+            &lt;/div&gt;
+                </code></pre><a href="#ref-link-3">[4]</a>
+
+            <p class="text-justify">
+                <code>.container-xx</code> e втория вид контейнер наричан “Променлив контейнер”. Този тип позволява да се поддържа дадено оформление на екрана докато не се стигне до breakpoint който е зададен в името на класа.
+            </p>
+
+
+            <pre class="example"><code>
+            &lt;div class="container-xs"&gt; 
+                &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+                &lt;p&gt;This is some text.&lt;/p&gt;
+            &lt;/div&gt;
+                </code></pre> <a href="#ref-link-2">[4]</a>
+
+            <p class="text-justify">
+                Третия вид контейнер е <code>container-fluid</code>. Той винаги се разтега на 100% от даденото му място.
+            </p>
+
+            <pre class="example"><code>
+                    &lt;div class="container-fluid"&gt; 
+                    &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+                    &lt;p&gt;This is some text.&lt;/p&gt;
+                    &lt;/div&gt;
+                </code></pre><a href="#ref-link-10">[4]</a>
+
+            <p class="text-justify">
+                Таблицата отдолу представя как всеки вид контейнер ще се изменя при достигането на различни breakpoints.
+            </p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td class="border-dark"></td>
+                        <th scope="col">
+                            Extra small<br>
+                            <span class="fw-normal">&lt;576px</span>
+                        </th>
+                        <th scope="col">
+                            Small<br>
+                            <span class="fw-normal">≥576px</span>
+                        </th>
+                        <th scope="col">
+                            Medium<br>
+                            <span class="fw-normal">≥768px</span>
+                        </th>
+                        <th scope="col">
+                            Large<br>
+                            <span class="fw-normal">≥992px</span>
+                        </th>
+                        <th scope="col">
+                            X-Large<br>
+                            <span class="fw-normal">≥1200px</span>
+                        </th>
+                        <th scope="col">
+                            XX-Large<br>
+                            <span class="fw-normal">≥1400px</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container</code></th>
+                        <td class="text-muted">100%</td>
+                        <td>540px</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-sm</code></th>
+                        <td class="text-muted">100%</td>
+                        <td>540px</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-md</code></th>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-lg</code></th>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-xl</code></th>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-xxl</code></th>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td>1320px</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="fw-normal"><code>.container-fluid</code></th>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                        <td class="text-muted">100%</td>
+                    </tr>
+                </tbody>
+            </table><a href="#ref-link-3">[3]</a>
+        </section>
+
+        <section id="Grid">
+            <h5>Грид система</h5>
+            <p class="text-justify">
+                Bootstrap изгражда Грид система която се използва за да строим оформления. Всяка такава система се състои от множество контейнери, редове и колони в които да се подрежда съдържанието. Чрез контейнерите може да се центализира и хоризонтално да подреди съдържанието. С помоща на редовете се разпределя съдържанието вертикално, а колоните служат за разпределяне на съдържанието на всеки ред.
+            </p>
+        </section>
+
+        <section id="Columns">
+            <h5>Колони</h5>
+            <p class="text-justify">
+                Всеки ред съдържа 12 колони, което позволява да се създават различни комбинации от елементи на всеки ред. За да разпределим колоните между елементите на реда използваме класовете <code>col</code> и <code>col-*</code>. Когато искаме всички елементи да са със един и същи размер е хубаво да се придържаме към универсалния клас <code>col</code>, но ако искаме да имаме няколко колони със различни размери се използва <code>col-*</code>. Важно е сумата от размерите на колоните винаги да е 12.
+            </p>
+
+            <div class="bd-example bd-example-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">col</div>
+                        <div class="col">col</div>
+                        <div class="col">col</div>
+                        <div class="col">col</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">col-8</div>
+                        <div class="col-4">col-4</div>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code>
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col"&gt;col&lt;/div&gt;
+                    &lt;div class="col"&gt;col&lt;/div&gt;
+                    &lt;div class="col"&gt;col&lt;/div&gt;
+                    &lt;div class="col"&gt;col&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-8"&gt;col-8&lt;/div&gt;
+                    &lt;div class="col-4"&gt;col-4&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </code></pre><a href="#ref-link-7">[7]</a>
+
+
+
+            <p class="text-justify">
+                Колоните идват и със друг вид класове които да отговарят на 6те breakpoint във Bootstrap. Двата вида класове могат да се комбинират за по-динамичен и гъвкав облик.
+            </p>
+
+            <div class="bd-example bd-example-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">.col-md-8</div>
+                        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                    </div>
+
+                    
+                    <div class="row">
+                        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">.col-6</div>
+                        <div class="col-6">.col-6</div>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code>
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-8"&gt;.col-md-8&lt;/div&gt;
+                    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="row"&gt;
+                    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+                    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+                    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="row"&gt;
+                    &lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+                    &lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </code></pre><a href="#ref-link-7">[7]</a>
+
+            <p class="text-justify">
+                За външния вид и разположението на колоните върху реда съществуват и мого други класове като <code>.align-self-start</code> и <code>.justify-content-start</code> които носят основно козметични промени.
+
+            </p>
+            
+            <p class="text-justify"> 
+                Във видеото може да видите пример за това как работят класовете <code>col-*-*</code> и как те променят ширината на обектите спрямо големината на прозореца. Обектите на първия ред имат множество класове, които да са активни на различни breakpoints. Обектите от долния ред имат само класовете <code>.col-6</code> и <code>.col-sm-3</code>, но тъй като втория клас е с по-голяма важност от първия(защото дава определен breakpoint) то първия клас не важи. Също така понеже няма добавени класове за  breakpoints по големи от sm, то големината от 3 колони се взима за всички breakpoints.
+            </p>
+            
+            <img width="70%" src="img/Screen-Recording-2022-04-13-at-16.18.51.gif"> </img>
+            
+            
+        </section>
+
+    </section> <!-- Layout -->
+    
+    <section class="container">
+        <h2>Съдържание</h2>
+        <section id="Typography">
+            <h5>Типография</h5>
+            <p class="text-justify">
+                Bootstrap променя външния вид на много от основните ХTML тагове, свързани със текст, като <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code> и други. Контейнера <code>&lt;p&gt;</code> вече е със <code>margin-top: 0</code> и <code>margin-bottom:1rem</code>. Контейнерите за заглавия са със одебелен текст и променлив размер спрямо големината на екрана.
+            </p>
+
+            <p class="text-justify">
+                Значението на други тагове като <code>&lt;small&gt;</code> е изцяло променено. Този таг вече се използва за вторичен, по-малък текст, който да придрощава заглавия. Още от тагове със променен външен вид са <code>&lt;mark&gt;</code>, <code>&lt;abbr&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;dl&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code> и <code>&lt;pre&gt;</code>.
+            </p>
+
+            <div class="example-border">
+
+                <h1>h1 heading <small>secondary text</small></h1>
+                <h2>h2 heading <small>secondary text</small></h2>
+                <h3>h3 heading <small>secondary text</small></h3>
+            </div>
+            <pre class="example"><code>
+    &lt;h1&gt;h1 heading &lt;small&gt;secondary text&lt;/small&gt;&lt;/h1&gt;
+    &lt;h2&gt;h2 heading &lt;small&gt;secondary text&lt;/small&gt;&lt;/h2&gt;
+    &lt;h3&gt;h3 heading &lt;small&gt;secondary text&lt;/small&gt;&lt;/h3&gt;
+                </code></pre><a href="#ref-link-9">[9]</a>
+
+
+            <p class="text-justify">
+                Освен променени тагове за оформление текста са предоставени и много готови класове като <code>.h1”</code> до <code>.h6</code> .които да копират стила и държанието на съотетните тагове със същото име. Класовете <code>.display-1</code> до <code>.display-6</code> дават нови стилове за заглавия, които да бъдат по-отличителни от традиционите. Други готови класове са <code>.lead</code>, <code>.text-start</code> и <code>.text-lowercase</code>.
+            </p>
+
+            <div class="example-border">
+
+                <h1 class="display-1">Display 1</h1>
+                <h1 class="display-2">Display 2</h1>
+                <h1 class="display-3">Display 3</h1>
+            </div>
+            <pre class="example"><code>
+    &lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+    &lt;h1 class="display-2"&gt;Display 2&lt;/h1&gt;
+    &lt;h1 class="display-3"&gt;Display 3&lt;/h1&gt;
+                </code></pre><a href="#ref-link-9">[9]</a>
+
+
+        </section>
+
+        <section id="Colors">
+            <h5>Цветове</h5>
+            <p class="text-justify">
+                Във фреймуърка се включват класове които да дават цвят на текста като <code>.text-white</code> и <code>.text-red</code>.
+            </p>
+            <p class="text-justify">
+                Bootstrap включва класове които да предоставят “значение чрез цветове”. Такъв тип класове се наричат контекстови и могат да се срещнат в много голяма част от групте класове на този фреймуърк. Такива цветове са <code>text-primary</code> който дава син цвят и <code>text-danger</code> който дава червено. Също така се предоставят класовете <code>.text-black-50</code> и <code>.text-white-50</code> които да дават 50% прозрачност на текст в бяло или черно.
+            </p>
+            
+            <div class="example-border">
+
+                <p class="text-muted">This text is muted.</p>
+                <p class="text-primary">This text is important.</p>
+                <p class="text-success">This text indicates success.</p>
+            </div>
+            <pre class="example"><code>
+    &lt;p class="text-muted"&gt;This text is muted.&lt;/p&gt;
+    &lt;p class="text-primary"&gt;This text is important.&lt;/p&gt;
+    &lt;p class="text-success"&gt;This text indicates success.&lt;/p&gt;
+                </code></pre> <a href="#ref-link-10">[10]</a>
+
+
+            <p class="text-justify">
+                Подобно на класовете които придавата значение на текста чрез цвят, има и класове като <code>.bg-primary</code> и <code>.bg-warning</code> които да правят същото за фона на текста.
+            </p>
+
+            <div class="example-border">
+
+                <p class="bg-primary text-white">This text is important.</p>
+                <p class="bg-success text-white">This text indicates success.</p>
+                <p class="bg-info text-white">This text represents some information.</p>
+            </div>
+            <pre class="example"><code>
+    &lt;p class="bg-primary text-white"&gt;This text is important.&lt;/p&gt;
+    &lt;p class="bg-success text-white"&gt;This text indicates success.&lt;/p&gt;
+    &lt;p class="bg-info text-white"&gt;This text represents some information.&lt;/p&gt;
+               </code></pre> <a href="#ref-link-10">[10]</a>
+
+        </section>
+
+        <section id="Images">
+            <h5>Изображения</h5>
+            <p class="text-justify">
+                Bootstrap предоставя няколко готови класове за работа със снимки. За рамката на снимка са предоставени три класа <code>.rounded</code>, <code>.rounded-circle</code> и <code>.img-thumbnail</code>.
+            </p>
+
+            <div class="example-border">
+                <img class="rounded image-example " src="img/hammock.jpg" width="304" height="236">
+
+                <img class="rounded-circle image-example " src="img/hammock.jpg" width="304" height="236">
+
+                <img class="img-thumbnail image-example " src="img/hammock.jpg" width="304" height="236">
+
+            </div>
+            <pre class="example"><code>
+    &lt;img class="rounded image-example" src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+    &lt;img class="rounded-circle image-example" src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+    &lt;img class="img-thumbnail image-example" src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt;
+            </code></pre> <a href="#ref-link-11">[11]</a>
+
+            <p class="text-justify">
+                За позицията на снимката се използват класовете <code>.float-start</code> ,<code>.float-end</code> и <code>.mx-auto .d-block</code>:
+            </p>
+
+            <div class="example-border">
+                <img class="float-start " src="img/hammock.jpg" width="304" height="236">
+
+                <img class="float-end " src="img/hammock.jpg" width="304" height="236">
+
+                <img class="mx-auto d-block " src="img/hammock.jpg" width="304" height="236">
+
+            </div>
+            <pre class="example"><code>
+    &lt;img class="float-start " src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+    &lt;img class="float-end " src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+    &lt;img class="mx-auto d-block " src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+            </code></pre> <a href="#ref-link-11">[11]</a>
+
+
+            <p class="text-justify">
+                За да се направи снимаката променлива спрямо размера на екрана е даден класа <code>.img-fluid</code>
+            </p>
+
+            <pre class="example"><code>
+    &lt;img class="img-fluid" src="https://c.pxhere.com/photos/56/53/sunset_hammock_relaxation_bali_asia_indonesia_sun_water-1370185.jpg!d" width="304" height="236"&gt; 
+            </code></pre> <a href="#ref-link-11">[11]</a>
+
+        </section>
+
+        <section id="Tables">
+
+            <h5>Таблици</h5>
+
+            <p class="text-justify">
+                За оформлението на таблици е даден основен клас <code>.table</code> който дава долни граници на редовете, лек падинг между клетките, както и някой основни детайли.
+            </p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre class="example"><code>
+            &lt;table class="table"&gt;
+              &lt;thead&gt;
+                &lt;tr&gt;
+                  &lt;th scope="col"&gt;#&lt;/th&gt;
+                  &lt;th scope="col"&gt;First&lt;/th&gt;
+                  &lt;th scope="col"&gt;Last&lt;/th&gt;
+                  &lt;th scope="col"&gt;Handle&lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;th scope="row"&gt;1&lt;/th&gt;
+                  &lt;td&gt;Mark&lt;/td&gt;
+                  &lt;td&gt;Otto&lt;/td&gt;
+                  &lt;td&gt;@mdo&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;th scope="row"&gt;2&lt;/th&gt;
+                  &lt;td&gt;Jacob&lt;/td&gt;
+                  &lt;td&gt;Thornton&lt;/td&gt;
+                  &lt;td&gt;@fat&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;th scope="row"&gt;3&lt;/th&gt;
+                  &lt;td colspan="2"&gt;Larry the Bird&lt;/td&gt;
+                  &lt;td&gt;@twitter&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+           </code> </pre><a href="#ref-link-12">[12]</a>
+
+            <p class="text-justify">
+                Този клас и много други второстепенни класове могат да се комбинират за да се саздадът различни стилове. Класът <code>.table-striped</code> дава различен цвят на четни и нечетни редове.
+            </p>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre class="example"><code>
+            &lt;table class="table table-striped"&gt;
+              ...
+            &lt;/table&gt;
+            </code></pre><a href="#ref-link-12">[12]</a>
+
+            <p class="text-justify">
+                Класът <code>.table-bordered</code> добавя рамка от всички страни на таблицата.
+            </p>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre class="example"><code>
+            &lt;table class="table table-bordered"&gt;
+              ...
+            &lt;/table&gt;
+            </code></pre><a href="#ref-link-12">[12]</a>
+
+            <p class="text-justify">
+                И тук съществуват класове като <code>.table-primary</code> и <code>.table-success</code> които да придават значение чрез цветове. За да се направи променлива таблица спрямо размера на екрана се използва класа <code>.table-responsive</code> към който могат да се добавят и различни breakpoints.
+            </p>
+
+
+            <table class="table table-primary ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre class="example">
+            &lt;table class="table table-primary"&gt;
+              ...
+            &lt;/table&gt;
+            </pre><a href="#ref-link-12">[12]</a>
+
+        </section>
+
+    </section> <!-- Content -->
+
+    <section class="container">
+
+        <h2>Формуляри</h2>
+
+        <section id="Form">
+            <h5>Форми</h5>
+            <p class="text-justify">
+                Поделементите на тагът <code>&lt;form&gt;</code> имат клас <code>.form-control</code> които им дава нов стил. Тук има и възможността да се използва грид системата във формат за да се подредят различните елементи. За да се стилизира прозореца за избиране на цвят е добавен и класа <code>.form-control-color</code>.
+            </p>
+
+            <div class="example-border">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Enter email" name="email">
+                        </div>
+                        <div class="col">
+                            <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+                        </div>
+                        <div class="col">
+                            <input type="color" class="form-control form-control-color" value="#CCCCCC">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <pre class="example"><code>
+        &lt;form&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col"&gt;
+                    &lt;input type="text" class="form-control" placeholder="Enter email" name="email"&gt;
+                &lt;/div&gt;
+                &lt;div class="col"&gt;
+                    &lt;input type="password" class="form-control" placeholder="Enter password" name="pswd"&gt;
+                &lt;/div&gt;
+                &lt;div class="col"&gt;
+                    &lt;input type="color" class="form-control form-control-color" value="#CCCCCC"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+            </code></pre><a href="#ref-link-15">[15]</a>
+
+        </section>
+
+        <section id="Select">
+            <h5>Select</h5>
+            <p class="text-justify">
+                Select менюто, което служи за избиране на една възможност от множество, също има клас <code>.form-select</code> от Bootstrap за нов външен вид. Стилът на менюто може да се специфицира и до размера на полето с клас <code>.form-select-sm</code> или <code>.form-select-lg</code>
+            </p>
+
+            <div class="example-border">
+                <select class="form-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <pre class="example"><code>
+        &lt;select class="form-select"&gt;
+            &lt;option&gt;1&lt;/option&gt;
+            &lt;option&gt;2&lt;/option&gt;
+            &lt;option&gt;3&lt;/option&gt;
+            &lt;option&gt;4&lt;/option&gt;
+        &lt;/select&gt;
+            </code></pre> <a href="#ref-link-16">[16]</a>
+        </section>
+
+        <section id="Check_and_radio">
+            <h5>Check и радио бутони</h5>
+            <p class="text-justify">
+                За да стилизираме чек или радио бутони със Bootstrap се налага първо да ги обхванем във обвиващ контейнер които да има класа <code>.form-check</code>. Всеки чекбокс и радио бутон трябва да има класа <code>.form-check-input</code>, а надписите които ги описват имат нужда от класа <code>.form-check-label</code>. Ако искаме някой бутон да от отбелязан по пподразбиране трябва да му добавим атрибут <code>checked</code>.
+            </p>
+
+            <div class="example-border">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
+                    <label class="form-check-label">Option 1</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>Option 2
+                    <label class="form-check-label" for="radio2"></label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 3
+                    <label class="form-check-label" for="radio2"></label>        
+                </div>
+            </div>
+            <pre class="example"><code>
+            &lt;div class="form-check"&gt;
+                    &lt;input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" &gt;
+                    &lt;label class="form-check-label"&gt;Option 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="form-check"&gt;
+                    &lt;input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked&gt;Option 2
+                    &lt;label class="form-check-label" for="radio2"&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="form-check"&gt;
+                    &lt;input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2"&gt;Option 3
+                    &lt;label class="form-check-label" for="radio2"&gt;&lt;/label&gt;        
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </code></pre> <a href="#ref-link-17">[17]</a>
+        </section>
+
+    </section> <!-- Forms -->
+
+    <section class="container">
+
+        <h2>Компоненти</h2>
+
+        <section id="Alerts">
+            <h5>Alerts</h5>
+            <p class="text-justify">
+                Фреймуърка bootstarp предлага група от класове които да създадът сигнални съобщения съобщения. Всяко съобщение се създава с добавянето на основния клас <code>.alert</code> и някой то второстепенните класове, като например <code>.alert-success</code> или <code>.alert-warning</code> които да добавят визуален контекст на съобщението.
+            </p>
+
+            <div class="example-border">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+                <div class="alert alert-info">
+                    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+                </div>
+                <div class="alert alert-warning">
+                    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+                </div>
+
+
+            </div>
+            <pre class="example"><code>
+    &lt;div class="alert alert-success"&gt;
+        &lt;strong&gt;Success!&lt;/strong&gt; This alert box could indicate a successful or positive action.
+    &lt;/div&gt;
+    &lt;div class="alert alert-info"&gt;
+        &lt;strong&gt;Info!&lt;/strong&gt; This alert box could indicate a neutral informative change or action.
+    &lt;/div&gt;
+    &lt;div class="alert alert-warning"&gt;
+        &lt;strong&gt;Warning!&lt;/strong&gt; This alert box could indicate a warning that might need attention.
+    &lt;/div&gt;
+            </code></pre> <a href="#ref-link-19">[19]</a>
+
+            <p class="text-justify">
+                За да има функциалността да се затваря дадено съобщение, към вече съществъващите класове се добавя и “<code>alert-dismissible</code>. След това към съобщението се добавя бутон със атрибутите <code>class=“btn-close"</code> и <code>data-bs-dismiss=“alert”</code>. За допълнителен ефект на затварянето, към съобщението могат да се добавят и класовете <code>.fade</code> и <code>.show</code>.
+            </p>
+
+            <div class="example-border">
+                <div class="alert alert-success alert-dismissible fade show">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+                </div>
+
+            </div>
+            <pre class="example"><code>
+    &lt;div class="alert alert-success alert-dismissible fade show"&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+        &lt;strong&gt;Success!&lt;/strong&gt; This alert box could indicate a successful or positive action.
+    &lt;/div&gt;
+            </code></pre> <a href="#ref-link-19">[19]</a>
+        </section>
+
+        <section id="Badges">
+            <h5>Badges</h5>
+            <p class="text-justify">
+                За създаването на баджове със допълнителна информация, Bootstrap предоставя класа <code>.badge</code>, които поставен в комбинация на клас които задава фон (пример <code>.bg-secondary</code>) върху таг <code>&lt;span&gt;</code> създават бадж. За допълнителна стилизация съществува и класа <code>.rounded-pill</code>, който прави ръбовете на баджа заоблени.
+            </p>
+
+            <div class="example-border">
+                <span class="badge bg-primary">Primary</span>
+                <span class="badge bg-secondary rounded-pill">Secondary</span>
+                <span class="badge bg-success">Success </span>
+            </div>
+            <pre class="example"><code>
+        &lt;span class="badge bg-primary"&gt;Primary&lt;/span&gt;
+        &lt;span class="badge bg-secondary rounded-pill"&gt;Secondary&lt;/span&gt;
+        &lt;span class="badge bg-success”&gt;Success&lt;/span&gt;
+            </code></pre> <a href="#ref-link-21">[21]</a>
+
+            <p class="text-justify">
+                Баджовете могат да съществуват самостоятелно или да бъдат вкарани в други обекти.
+            </p>
+        </section>
+
+        <section id="Button">
+            <h5>Buttons</h5>
+            <p class="text-justify">
+                За визуализация на бутони съществуват няколко типа класове, които могат да се добавят както към тага <code>&lt;button&gt;</code>, така и към <code>&lt;a&gt;</code> и <code>&lt;input&gt;</code>
+            </p>
+            <p class="text-justify">
+                Основните типове бутонни се създават с помоща на класа <code>.btn</code> в комбинация с клас които придава някакво значение(също като при цветовете) като <code>.btn-primary</code>. Друг тип класове като "<code>btn-outline-primary</code> за дават създават само рамка. Съществуват и класове като <code>.btn-lg</code> които да определят размера на бутона. 
+            </p>
+
+            <div class="example-border">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-success btn-lg">Success</button>
+            </div>
+            <pre class="example"><code>
+        &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+        &lt;button type="button" class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+        &lt;button type="button" class="btn btn-success btn-lg"&gt;Success&lt;/button&gt;
+            </code></pre> <a href="#ref-link-23">[23]</a>
+
+            <p class="text-justify">
+                    Към бутона си можем да добавим и различни видове анимация с помоща на група класове <code>.spinner-border</code> и <code>.spinner-border-sm</code>. За спинерите може да прочетете повече в раздела Spinners
+            </p>
+
+            <div class="example-border">
+                <button class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm"></span>
+                    Loading..
+                </button>
+                <button class="btn btn-primary">
+                    <span class="spinner-grow spinner-grow-sm"></span>
+                    Loading..
+                </button>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="example-border"&gt;
+            &lt;button class="btn btn-primary"&gt;
+                &lt;span class="spinner-border spinner-border-sm"&gt;&lt;/span&gt;
+                Loading..
+            &lt;/button&gt;
+            &lt;button class="btn btn-primary"&gt;
+                &lt;span class="spinner-grow spinner-grow-sm"&gt;&lt;/span&gt;
+                Loading..
+            &lt;/button&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-23">[23]</a>
+            
+        </section>
+
+        <section id="Cards">
+            <h5>Cards</h5>
+
+            <p class="text-justify">
+                Картата във Bootstrap е тип контейнер със рамка:
+            </p>
+            <p class="text-justify">
+                Основния тип контейнер се създава със помоща на класа <code>.card</code> и съдържание на което се слага класа <code>.card-body</code>. По сложни карти могат да съдържат и header или footer, както и контекстов клас.
+            </p>
+
+            <div class="example-border">
+                <div class="card">
+                    <div class="card-body">Basic card</div>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="card"&gt;
+            &lt;div class="card-body"&gt;Basic card&lt;/div&gt;
+        &lt;/div&gt;
+            </code></pre><a href="#ref-link-25">[25]</a>
+
+            <div class="example-border">
+                <div class="card">
+                    <div class="card-body bg-primary text-white">Primary card</div>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="card"&gt;
+            &lt;div class="card-body bg-primary text-white"&gt;Primary card&lt;/div&gt;
+        &lt;/div&gt;
+           </code> </pre><a href="#ref-link-25">[25]</a>
+            
+            <div class="example-border">
+                <div class="card">
+                    <div class="card-header">Header</div>
+                    <div class="card-body">Content</div>
+                    <div class="card-footer">Footer</div>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="card"&gt;
+            &lt;div class="card-header"&gt;Header&lt;/div&gt;
+            &lt;div class="card-body"&gt;Content&lt;/div&gt;
+            &lt;div class="card-footer"&gt;Footer&lt;/div&gt;
+        &lt;/div&gt;
+           </code> </pre> <a href="#ref-link-25">[25]</a>
+        </section>
+
+        <section id="Carousel">
+            <h5>Carousel</h5>
+
+            <p class="text-justify">
+                Carousel е контейнер предоставен от Bootstrap, който представлява презентация от въртящи ссе обекти. Използва се основно за създаването на галерии. За да създадем Carousel използваме няколко основни класа, които ще можем да проследим в долния пример.
+            </p>
+
+            <div class="example-border">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/la.jpeg" alt="Los Angeles" class="d-block" style="width:100%">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/chicago.jpeg" alt="Chicago" class="d-block" style="width:100%">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/ny.jpeg" alt="New York" class="d-block" style="width:100%">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div id="demo" class="carousel slide" data-bs-ride="carousel"&gt;
+
+            &lt;div class="carousel-indicators"&gt;
+                &lt;button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+                &lt;button type="button" data-bs-target="#demo" data-bs-slide-to="1"&gt;&lt;/button&gt;
+                &lt;button type="button" data-bs-target="#demo" data-bs-slide-to="2"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;div class="carousel-inner"&gt;
+                &lt;div class="carousel-item active"&gt;
+                    &lt;img src="mg/la.jpeg" class="d-block" style="width:100%"&gt;
+                &lt;/div&gt;
+                &lt;div class="carousel-item"&gt;
+                    &lt;img src="img/chicago.jpeg" class="d-block" style="width:100%"&gt;
+                &lt;/div&gt;
+                &lt;div class="carousel-item"&gt;
+                    &lt;img src="img/ny.jpeg" class="d-block" style="width:100%"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev"&gt;
+                &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next"&gt;
+                &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-27">[27]</a>
+
+            <p class="text-justify">
+                Класът <code>.carosel</code> служи за създаване на слайдшоуто, а класът <code>.slide</code> дава CSS анимацията за плавно преминаване от една снимка в друга. След създаването на основния кокнтейнер трябва да се създадът бутони които да отговарят на всяка снимка. Тези бутони се поставят в контейнер с клас <code>.carousel-indicators</code> който им дава съответната функционалност и външен вид. Следваща стъпка ще бъде да се добавят самите снимки. На тях се поставя класа <code>.carousel-item"</code> Последна стъпка е добавянето на двете стрелки с които контролираме слайдшоуто. За тях отново се използват бутони на които се дават един от двата класа <code>.carousel-control-prev</code> или <code>.carousel-control-next</code>. За да използваме иконите със стрели които идват със Bootstrap във всеки бутон добавяме <code>&lt;span&gt;</code> със един от класовете <code>.carousel-control-prev-icon</code> или <code>.carousel-control-next-icon</code>.
+            </p>
+
+            <p class="text-justify">
+                Със помоща на класа <code>.carousel-caption</code> имаме възможността да добавим коментар към всяка снимка.
+            </p>
+
+            <pre class="example"><code>
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="la.jpg" alt="Los Angeles"&gt;
+            &lt;div class="carousel-caption"&gt;
+                &lt;h3&gt;Los Angeles&lt;/h3&gt;
+                &lt;p&gt;We had such a great time in LA!&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-27">[27]</a>
+        </section>
+
+        <section id="Dropdowns">
+            <h5>Dropdowns</h5>
+            <p class="text-justify">
+                Bootstrap позволява лесно създаване на падащи менюта със различни стилове. За да създаем падащо меню се изисква контейнер който има класа <code>.dropdown</code>, както и бутон и списък за елементите на менюто. Бутона трябва да има клас <code>.dropdown-toggle</code>, както и атрибута <code>data-bs-toggle="dropdown"</code>. Списъка от елементи на падащото меню има нужда от класа <code>.dropdown-menu</code>, а всеки от елементите му се нуждае от клас "<code>dropdown-item</code>. Тези класове придават не само желаната функционалност, но и приятен вънщен вид на падащото меню.
+            </p>
+
+            <div class="example-border">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item" href="#">Link 2</a></li>
+                        <li><a class="dropdown-item" href="#">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="dropdown"&gt;
+            &lt;button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"&gt;
+                Dropdown button
+            &lt;/button&gt;
+            &lt;ul class="dropdown-menu"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+           </code> </pre> <a href="#ref-link-29">[29]</a>
+
+            <p class="text-justify">
+                Освет тага <code>&lt;button&gt;</code> може да се изолзва и линк <code>&lt;a&gt;</code>.
+            </p>
+
+            <div class="example-border">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown link
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="dropdown"&gt;
+            &lt;a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                Dropdown link
+            &lt;/a&gt;
+            .....
+        &lt;/div&gt;
+           </code> </pre> <a href="#ref-link-28">[28]</a>
+
+            <p class="text-justify">
+                Падащите менюта могат да съдържат и други елементи като разделител, header, активни и неактивни елементи и обикновен текст. Всеки елемент се определя със специфичен клас който може да се намери в следващия пример.
+            </p>
+
+            <div class="example-border">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li>
+                            <h5 class="dropdown-header">Dropdown header </h5>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Normal</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                            </hr>
+                        </li>
+                        <li><a class="dropdown-item active" href="#">Active</a></li>
+                        <li><a class="dropdown-item disabled" href="#">Disabled</a></li>
+                        <li><span class="dropdown-item-text">Just Text</span></li>
+                    </ul>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="dropdown"&gt;
+            &lt;a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+                Dropdown link
+            &lt;/a&gt;
+            &lt;ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"&gt;
+                &lt;li&gt;&lt;h5 class="dropdown-header"&gt;Dropdown header &lt;/h5&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Normal&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/hr&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="dropdown-item active" href="#"&gt;Active&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a class="dropdown-item disabled" href="#"&gt;Disabled&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;span class="dropdown-item-text"&gt;Just Text&lt;/span&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-29">[29]</a>
+
+            <p class="text-justify">
+                Bootstrap дава и взможността да избираме дали падащото меню да се спуска надолу или да се изкачва нагоре. Това става със смяна на класа <code>.dropdown</code> със <code>.dropup</code>.
+            </p>
+            <div class="example-border">
+                <div class="dropup">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div> <a href="#ref-link-29">[29]</a>
+        </section>
+
+        <section id="Modal">
+            <h5>Modal</h5>
+            <p class="text-justify">
+                Modal е контейнер със изкачащо съобшение, което да привлече вниманието на потребителя. Всеки Modal се състои от основно body на което могат да се добавя header и footer. За да създадем Modal трябва да използваме група от класове <code>.modal-*</code>. За създаване на основния контейнер се използва <code>.modal</code>, за body използваме <code>.modal-body</code>. За да представиме съобщението в средата на екрана ни е предоставен класа <code>.modal-dialog-centered</code>.
+            </p>
+
+            <p class="text-justify">
+                За да използваме бутон с който да затворм изкачащото съобщение, във бутона ни трябва да присъства атрибута <code>.data-bs-dismiss="modal"</code>.
+            </p>
+
+            <div class="example-border">
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Open modal
+                </button>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">
+                    Open modal center
+                </button>
+
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Modal Heading</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                Modal body..
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="myModal1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Modal Heading</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                Modal body..
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="modal" id="myModal"&gt;
+            &lt;div class="modal-dialog"&gt;
+                &lt;div class="modal-content"&gt;
+                    &lt;div class="modal-header"&gt;
+                        &lt;h4 class="modal-title"&gt;Modal Heading&lt;/h4&gt;
+                        &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="modal-body"&gt;
+                        Modal body..
+                    &lt;/div&gt;
+                    &lt;div class="modal-footer"&gt;
+                        &lt;button type="button" class="btn btn-danger" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-31">[31]</a>
+        </section>
+
+        <section id="Offcanvas">
+            <h5>Offcanvas</h5>
+
+            <p class="text-justify">
+                Offcanvas е странично меню което се появява с натискането на бутон. Този тип менюта са усобено популярни през последните години заради тяхната компактност. Особеено добри са за устройства с малки екрани като мобилните телефони, където едно постоянно меню ще заема голяма част от екрана.
+            </p>
+
+            <p class="text-justify">
+                За да създадем Offcanvas имаме нужда от контейнер със класове <code>.offcanvas</code> и <code>.offcanvas-start</code>.Класа <code>.offcanvas</code> създава менюто, а <code>.offcanvas-start</code> го позиционира в лявата страна на екрана. Вътрешността на този контейнер доста наподобява самостоятелена HTML страница. Започва се със контейнер с клас <code>.offcanvas-header</code>, а сле него следва контейнер с <code>.offcanvas-body</code>.
+            </p>
+
+            <div class="example-border">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    Open Sidebar
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div> Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc. </div>
+                    </div>
+                </div>
+            </div>
+            <pre class="example"><code>
+        &lt;div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"&gt;
+            &lt;div class="offcanvas-header"&gt;
+                &lt;h5 class="offcanvas-title" id="offcanvasExampleLabel"&gt;Offcanvas&lt;/h5&gt;
+                &lt;button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="offcanvas-body"&gt;
+                &lt;div&gt; 
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc. 
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-32">[32]</a>
+
+            <p class="text-justify">
+                Освен <code>.offcanvas-start</code> за позициониране съществуват и класовете <code>.offcanvas-end</code>,<code>.offcanvas-top</code> и <code>.offcanvas-bottom</code>
+            </p>
+            
+            <div class="example-border">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleEnd" aria-controls="offcanvasExampleEnd">
+                    Open Sidebar offcanvas-end
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExampleEnd" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div> Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc. </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleTop" aria-controls="offcanvasExample">
+                    Open Sidebar offcanvas-top
+                </button>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExampleTop" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div> Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc. </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExampleBottom" aria-controls="offcanvasExample">
+                    Open Sidebar offcanvas-bottom
+                </button>
+                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasExampleBottom" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div> Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc. </div>
+                    </div>
+                </div>
+            </div> <a href="#ref-link-32">[32]</a>
+
+        </section>
+
+        <section id="Spinners">
+            <h5>Spinners</h5>
+            <p class="text-justify">
+                Spinners са контейнери със анимация която да показва зареждане, създадени изцяло със CSS и HTML. Bootstrap предлага два вида зарждащи анимации, Border spinner и Growing spinner. Spinners се създават с един от двата класа <code>.spinner-border</code> или <code>.spinner-grow</code>. Към тези класове може да се добави и контекстови колсове (<code>.text-primary</code>). За да бъдат направени по-малки, може да се използват ласовете <code>.spinner-border-sm</code> и <code>.spinner-grow-sm</code>
+            </p>
+
+            <dir class="example-border">
+                <div class="spinner-border text-primary">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-secondary">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-border text-success spinner-border-sm">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-danger">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-warning">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-info spinner-grow-sm">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </dir>
+            
+            <pre class="example"><code>
+        &lt;div class="spinner-border text-primary"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="spinner-border text-secondary"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="spinner-border text-success spinner-border-sm"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="spinner-grow text-danger"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="spinner-grow text-warning"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="spinner-grow text-info spinner-grow-sm"&gt;
+            &lt;span class="visually-hidden"&gt;Loading...&lt;/span&gt;
+        &lt;/div&gt;
+            </code></pre> <a href="#ref-link-35">[35]</a>
+        </section>
+
+        <section id="Others">
+            <h5>Others</h5>
+            <p class="text-justify">
+                Други компоненти които Bootstrap предлага можете да намерите в документацията на <a href="https://getbootstrap.com/docs/5.1/components/accordion/">Bootstrap v5.1</a>
+            </p>
+        </section>
+    
+    </section> <!-- Components -->
+
+    <section id="Sorces" class="container">
+        <h2>Източници</h2>
+
+        <p id="ref-link-1">[1] Bootstrap v5.1 Documentation, Introduction - <a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank">https://getbootstrap.com/docs/5.1/getting-started/introduction/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-2">[2] Bootstrap v5.1 Documentation, Layout, Breakpoints - <a href="https://getbootstrap.com/docs/5.1/layout/breakpoints/" target="_blank">https://getbootstrap.com/docs/5.1/layout/breakpoints/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-3">[3] Bootstrap v5.1 Documentation, Layout, Containers - <a href="https://getbootstrap.com/docs/5.1/layout/containers/" target="_blank">https://getbootstrap.com/docs/5.1/layout/containers/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-4">[4] W3 School, Bootstrap 5 Tutorial, BS5 Containers - <a href="https://www.w3schools.com/bootstrap5/bootstrap_containers.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_containers.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-5">[5] Bootstrap v5.1 Documentation, Layout, Grid - <a href="https://getbootstrap.com/docs/5.1/layout/grid/" target="_blank"> https://getbootstrap.com/docs/5.1/layout/grid/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-6">[6] W3 School, Bootstrap 5 Tutorial, BS5 Grid Basic - <a href="https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-7">[7] Bootstrap v5.1 Documentation, Layout, Columns - <a href="https://getbootstrap.com/docs/5.1/layout/columns/" target="_blank"> https://getbootstrap.com/docs/5.1/layout/columns/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-8">[8] Bootstrap v5.1 Documentation, Content, Typography - <a href="https://getbootstrap.com/docs/5.1/content/typography/" target="_blank">https://getbootstrap.com/docs/5.1/content/typography/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-9">[9] W3 School, Bootstrap 5 Tutorial, BS5 Typography - <a href="https://www.w3schools.com/bootstrap5/bootstrap_typography.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_typography.php</a>, последно посетен на 12.04.2022.</p>
+        
+        <p id="ref-link-10">[10] W3 School, Bootstrap 5 Tutorial, BS5 Colors - <a href="https://www.w3schools.com/bootstrap5/bootstrap_colors.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_colors.php</a>, последно посетен на 12.04.2022.</p>
+        
+
+        <p id="ref-link-11">[11] Bootstrap v5.1 Documentation, Content, Images - <a href="https://getbootstrap.com/docs/5.1/content/images/" target="_blank">https://getbootstrap.com/docs/5.1/content/images/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-12">[12] W3 School, Bootstrap 5 Tutorial, BS5 Images - <a href="https://www.w3schools.com/bootstrap5/bootstrap_images.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_images.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-13">[13] Bootstrap v5.1 Documentation, Content, Tables - <a href="https://getbootstrap.com/docs/5.1/content/tables/" target="_blank">https://getbootstrap.com/docs/5.1/content/tables/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-14">[14] W3 School, Bootstrap 5 Tutorial, BS5 Tables - <a href="https://www.w3schools.com/bootstrap5/bootstrap_tables.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_tables.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-15">[15] W3 School, Bootstrap 5 Tutorial, BS5 Forms - <a href="https://www.w3schools.com/bootstrap5/bootstrap_forms.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_forms.php</a>, последно посетен на 12.04.2022.</p>
+        
+        <p id="ref-link-16">[16] W3 School, Bootstrap 5 Tutorial, BS5 Form Select - <a href="https://www.w3schools.com/bootstrap5/bootstrap_form_select.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_form_select.php</a>, последно посетен на 12.04.2022.</p>
+        
+        <p id="ref-link-17">[17] W3 School, Bootstrap 5 Tutorial, BS5 Check and Radio - <a href="https://www.w3schools.com/bootstrap5/bootstrap_form_check_radio.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_form_check_radio.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-18">[18] Bootstrap v5.1 Documentation, Components, Alerts - <a href="https://getbootstrap.com/docs/5.1/components/alerts/ " target="_blank">https://getbootstrap.com/docs/5.1/components/alerts/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-19">[19] W3 School, Bootstrap 5 Tutorial, BS5 Alerts - <a href="https://www.w3schools.com/bootstrap5/bootstrap_alerts.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_alerts.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-20">[20] Bootstrap v5.1 Documentation, Components, Badge - <a href="https://getbootstrap.com/docs/5.1/components/badge/" target="_blank">https://getbootstrap.com/docs/5.1/components/badge/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-21">[21] W3 School, Bootstrap 5 Tutorial, BS5 Badge - <a href="https://www.w3schools.com/bootstrap5/bootstrap_badges.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_badges.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-22">[22] Bootstrap v5.1 Documentation, Components, Buttons - <a href="https://getbootstrap.com/docs/5.1/components/buttons/" target="_blank">https://getbootstrap.com/docs/5.1/components/buttons/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-23">[23] W3 School, Bootstrap 5 Tutorial, BS5 Buttons - <a href="https://www.w3schools.com/bootstrap5/bootstrap_buttons.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_buttons.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-24">[24] Bootstrap v5.1 Documentation, Components, Card - <a href="https://getbootstrap.com/docs/5.1/components/card/" target="_blank">https://getbootstrap.com/docs/5.1/components/card/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-25">[25] W3 School, Bootstrap 5 Tutorial, BS5 Cards - <a href="https://www.w3schools.com/bootstrap5/bootstrap_cards.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_cards.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-26">[26] Bootstrap v5.1 Documentation, Components, Carousel - <a href="https://getbootstrap.com/docs/5.1/components/carousel/" target="_blank">https://getbootstrap.com/docs/5.1/components/carousel/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-27">[27] W3 School, Bootstrap 5 Tutorial, BS5 Carousel - <a href="https://www.w3schools.com/bootstrap5/bootstrap_carousel.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_carousel.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-28">[28] Bootstrap v5.1 Documentation, Components, Dropdowns - <a href="https://getbootstrap.com/docs/5.1/components/dropdowns/" target="_blank">https://getbootstrap.com/docs/5.1/components/dropdowns/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-29">[29] W3 School, Bootstrap 5 Tutorial, BS5 Dropdowns - <a href="https://www.w3schools.com/bootstrap5/bootstrap_dropdowns.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_dropdowns.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-30">[30] Bootstrap v5.1 Documentation, Components, Modal - <a href="https://getbootstrap.com/docs/5.1/components/modal/" target="_blank">https://getbootstrap.com/docs/5.1/components/modal/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-31">[31] W3 School, Bootstrap 5 Tutorial, BS5 Modal - <a href="https://www.w3schools.com/bootstrap5/bootstrap_modal.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_modal.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-32">[32] Bootstrap v5.1 Documentation, Components, Offcanvas - <a href="https://getbootstrap.com/docs/5.1/components/offcanvas/" target="_blank">https://getbootstrap.com/docs/5.1/components/offcanvas/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-33">[33] W3 School, Bootstrap 5 Tutorial, BS5 Offcanvas - <a href="https://www.w3schools.com/bootstrap5/bootstrap_offcanvas.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_offcanvas.php</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-34">[34] Bootstrap v5.1 Documentation, Components, Spinners - <a href="https://getbootstrap.com/docs/5.1/components/spinners/" target="_blank">https://getbootstrap.com/docs/5.1/components/spinners/</a>, последно посетен на 12.04.2022.</p>
+
+        <p id="ref-link-35">[35] W3 School, Bootstrap 5 Tutorial, BS5 Spinners - <a href="https://www.w3schools.com/bootstrap5/bootstrap_spinners.php" target="_blank"> https://www.w3schools.com/bootstrap5/bootstrap_spinners.php</a>, последно посетен на 12.04.2022.</p>
+    </section>
+</body>
+
+</html>
